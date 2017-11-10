@@ -1,12 +1,9 @@
 ############################################################################################################
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Sep 25 14:53:29 2017
 
+#Created on Mon Sep 25 14:53:29 2017
 #Object: Check if list of packages is already installed and if not, install all the missing ones	#
 #@author: Chinmay Deval												#
 
-"""
 ############################################################################################################
 
 #clear environment
