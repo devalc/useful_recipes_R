@@ -48,9 +48,12 @@ fun <- function() {
 }
 
 #visualize in Rstudio
-#animate(stack, addfun=fun, zlim=c(0.1, 0.9), main = date, pause=1, n=3, col = colfunc(15))
+# animate(stack, addfun=fun, zlim=c(0.1, 0.9), main = date, pause=1, n=3, col = colfunc(15))
 
 # Export as GIF file
 # saveGIF(animate(stack, addfun=fun, zlim=c(0.1, 0.9), main = date, pause=2, n=3, col = colfunc(15)), movie.name = "animation.gif", ani.width = 800, ani.height = 800, clean = TRUE)
 
 # Export as latex
+
+saveLatex(animate(stack, addfun=fun, zlim=c(0.1, 0.9), main = date, pause=1, n=3, col = colfunc(15)), movie.name = 'animation.gif',ani.width = 800, ani.height = 800,  interval=.8)
+
