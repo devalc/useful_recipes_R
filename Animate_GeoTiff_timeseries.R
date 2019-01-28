@@ -13,8 +13,9 @@ library(animation)
 
 
 ##### read all rasters in a dir and stack them
-img <- list.files()
+img <- list.files(pattern="tif$")
 stack <- stack(img)
+
 
 ##### Split raster name to get the date info
 split <- sapply(img, function(x) strsplit(x, "_")[[1]], USE.NAMES=FALSE)
@@ -48,12 +49,12 @@ fun <- function() {
 }
 
 #visualize in Rstudio
-# animate(stack, addfun=fun, zlim=c(0.1, 0.9), main = date, pause=1, n=3, col = colfunc(15))
+#animate(stack, addfun=fun, zlim=c(0.1, 0.9), main = date, pause=1, n=3, col = colfunc(15), cex.main = 3)
 
 # Export as GIF file
-# saveGIF(animate(stack, addfun=fun, zlim=c(0.1, 0.9), main = date, pause=2, n=3, col = colfunc(15)), movie.name = "animation.gif", ani.width = 800, ani.height = 800, clean = TRUE)
+#saveGIF(animate(stack, addfun=fun, zlim=c(0.1, 0.9), main = date, pause=2, n=3, col = colfunc(15)), movie.name = "animation.gif", ani.width = 800, ani.height = 800, clean = TRUE)
 
 # Export as latex
 
-saveLatex(animate(stack, addfun=fun, zlim=c(0.1, 0.9), main = date, pause=1, n=3, col = colfunc(15)), movie.name = 'animation.gif',ani.width = 800, ani.height = 800,  interval=.8)
+saveLatex(animate(stack, addfun=fun, zlim=c(0.1, 0.9), main = date, pause=1, n=3, col = colfunc(15),cex.main = 3), movie.name = 'animation.gif',ani.width = 800, ani.height = 800,  interval=.8)
 
